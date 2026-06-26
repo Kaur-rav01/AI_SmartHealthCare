@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% block title %}ChatBot{% endblock %}
+
+{% block content %}
+<style>
+    .chat-card {
+        background: #0e1117;
+        padding: 25px;
+        border-radius: 12px;
+        border: 1px solid #979595;
+        max-width: 900px;
+        margin: auto;
+        box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+
+    #chat-box {
+        height: 350px;
+        overflow-y: auto;
+        background: #1a1f27;
+        padding: 15px;
+        border-radius: 10px;
+        border: 1px solid #3a3f45;
+        color: #e8f1f2;
+    }
+
+    .chat-title {
+        font-weight: bold;
+        margin-bottom: 20px
+    }
+
+    .user-text {
+        color: #ffffffff;
+        margin: 8px 0;
+    }
+
+    .bot-text {
+        color: #1cb8b8;
+        margin: 8px 0;
+        white-space: pre-wrap;
+    }
+
+    .input-area {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .chat-input {
+        background: #12151c;
+        border: 1px solid #555;
+        color: white;
+        padding: 10px;
+    }
+
+    .send-btn {
+        background: #065f46;
+        border: none;
+        color: white;
+        padding: 10px 25px;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+
+    .send-btn:hover{
+        background: #047857;
+    }
+</style>
+
+<div class="chat-card">
+    <h3 class="chat-title">AI HealthCare ChatBot</h3>
+
+    <div id="chat-box">
+        <p class="text-muted">Start the conversation...</p>
+    </div>
+
+    <div class="input-area">
+        <input id="user-input" type="text" class="form-control chat-input"
+               placeholder="Type your question..."
+               onkeypress="if(event.key==='Enter'){ sendMessage(); }">
+        <button class="send-btn" onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<script>
+function sendMessage(){
+    const text = document.getElementById("user-input").value.trim();
+    if (!text) return;
+
+    const chat = document.getElementById("chat-box");
+    chat.innerHTML += `<p class='user-text'><strong>You:</strong> ${text}</p>`;
+    chat.scrollTop = chat.scrollHeight;
+
+    document.getElementById("user-input").value = "";
+
+    fetch("/chatbot", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({message: text})
+    })
+    .then(res => res.json())
+    .then(data => {
+        chat.innerHTML += `<p class='bot-text'><strong>Bot:</strong> ${data.reply}</p>`;
+        chat.scrollTop = chat.scrollHeight;
+    })
+    .catch(err => {
+        chat.innerHTML += `<p style='color:red'><strong>Error:</strong> Couldn't reach server.</p>`;
+        chat.scrollTop = chat.scrollHeight;
+    });
+}
+</script>
+{% endblock %}

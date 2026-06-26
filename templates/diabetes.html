@@ -1,0 +1,215 @@
+{% extends 'base.html' %}
+{% block title %}Diabetes{% endblock %}
+{% block content %}
+<style>
+.main-card {
+    max-width: 800px;      /* Adjust card width */
+    margin: 30px auto;      /* Center horizontally */
+    padding: 20px;
+}
+
+.card {
+    background-color: #0e1117;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #979595ff;
+}
+
+label {
+    color: #fff;
+    font-weight: 500;
+}
+
+.input-box {
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+.input-box::placeholder {
+    color: #bbb !important;
+    opacity: 1 !important;
+}
+
+.result-box {
+    background-color: #d9ffd9;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 6px solid green;
+    font-weight: bold;
+    font-size: 18px;
+    color: green;
+}
+
+.action-box {
+    background-color: #e8ffe8;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #b4ffb4;
+}
+</style>
+
+
+<div class="main-card">
+
+  <h3 class="text-center fw-bold mb-3">🧪 Diabetes Prediction</h3>
+  <p class="text-center text-light">
+        Answer the following health-related questions to check diabetes status
+  </p>
+
+  <form method="POST">
+    <div class="card p-4">
+      <div class="row">
+
+        <div class="col-md-6 mb-2">
+            <label title="Age in years">Age</label>
+            <input type="range" name="age" min="20" max="100" class="form-range"
+                   oninput="ageValue.innerText=this.value">
+            <p class="text-success">Age: <span id="ageValue">50</span></p>
+        </div>
+
+        <div class="col-md-6 mb-2">
+            <label>Irritability?</label>
+            <select name="irritability" class="form-select input-box">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+        </div>
+
+      </div>
+
+      <div class="row g-3 mt-2">
+
+        <div class="col-md-6">
+          <label>Gender</label>
+          <select name="gender" class="form-control input-box">
+              <option value="1">Male</option>
+              <option value="0">Female</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label>Wounds healing slowly?</label>
+          <select name="slow_healing" class="form-control input-box">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label>Frequent Urination?</label>
+          <select name="urination" class="form-control input-box">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label>Muscle Weakness?</label>
+          <select name="muscle_weakness" class="form-control input-box">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label>Excessive Thirst?</label>
+          <select name="thirst" class="form-control input-box">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label>Obesity?</label>
+          <select name="obesity" class="form-control input-box">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label>Sudden weight loss?</label>
+          <select name="weight_loss" class="form-control input-box">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label>Stiff muscles?</label>
+          <select name="stiff_muscles" class="form-control input-box">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label>Excessive hunger?</label>
+          <select name="hunger" class="form-control input-box">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label>Blurred vision?</label>
+          <select name="vision" class="form-control input-box">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label>Fungal infection (genital area)?</label>
+          <select name="fungal_infection" class="form-control input-box">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label>Constant itching?</label>
+          <select name="itching" class="form-control input-box">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label>Hair loss?</label>
+          <select name="hair_loss" class="form-control input-box">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label>Do you feel weak?</label>
+          <select name="weakness" class="form-control input-box">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+          </select>
+        </div>
+
+      </div>
+      <button class="predict-btn w-100 mt-3">Predict Diabetes</button>
+    </div>
+
+    
+
+  </form>
+
+  {% if prediction %}
+    <div class="alert {% if 'Diabetic' in prediction %}alert-danger{% else %}alert-success{% endif %} mt-4 fw-bold">
+      {{ prediction }}
+    </div>
+
+    <div class="card p-3 mt-2" style="background:#e8ffe8; color:green; border-left:6px solid green;">
+      {{ recommendation|safe }}
+    </div>
+  {% endif %}
+
+</div>
+
+{% endblock %}

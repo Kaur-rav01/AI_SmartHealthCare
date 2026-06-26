@@ -1,0 +1,239 @@
+user,report_type,prediction,recommendation,datetime
+Ravjot Kaur,Diabetes,Diabetic,"
+            <h5><strong>✅ Recommended Actions:</strong></h5>
+            <ul><li>Low-sugar diet</li><li>Exercise daily</li><li>Monitor sugar levels</li></ul>
+            ",2025-12-08 22:59
+Ravjot Kaur,Chest,Higher Chances of Pneumonia,"
+                <h5><strong>✅ Recommended Actions:</strong></h5>
+                <ul><li>Consult a doctor</li><li>Rest at home</li><li>Avoid dust and cold drinks</li></ul>
+                ",2025-12-08 23:02
+Ravjot Kaur,Chest,Higher Chances of Pneumonia,"
+                <h5><strong>✅ Recommended Actions:</strong></h5>
+                <ul><li>Consult a doctor</li><li>Rest at home</li><li>Avoid dust and cold drinks</li></ul>
+                ",2025-12-08 23:05
+Ravjot Kaur,Heart,Low Chances of Heart Disease,"
+            <h5><strong>✅ Recommended Actions:</strong></h5>
+            <ul><li>Maintain lifestyle</li><li>Exercise regularly</li><li>Monitor BP & sugar</li></ul>
+            ",2025-12-09 22:07
+Ravjot Kaur,Heart,Low Chances of Heart Disease,"
+            <h5><strong>✅ Recommended Actions:</strong></h5>
+            <ul><li>Maintain lifestyle</li><li>Exercise regularly</li><li>Monitor BP & sugar</li></ul>
+            ",2025-12-09 22:08
+Ravjot Kaur,Heart,Low Chances of Heart Disease,"
+            <h5><strong>✅ Recommended Actions:</strong></h5>
+            <ul><li>Maintain lifestyle</li><li>Exercise regularly</li><li>Monitor BP & sugar</li></ul>
+            ",2025-12-09 22:08
+Ravjot Kaur,Heart,Low Chances of Heart Disease,"
+            <h5><strong>✅ Recommended Actions:</strong></h5>
+            <ul><li>Maintain lifestyle</li><li>Exercise regularly</li><li>Monitor BP & sugar</li></ul>
+            ",2025-12-09 22:09
+Ravjot Kaur,Heart,Low Chances of Heart Disease,"
+            <h5><strong>✅ Recommended Actions:</strong></h5>
+            <ul><li>Maintain lifestyle</li><li>Exercise regularly</li><li>Monitor BP & sugar</li></ul>
+            ",2025-12-09 22:16
+Ravjot Kaur,Heart,Low Chances of Heart Disease,"
+            <h5><strong>✅ Recommended Actions:</strong></h5>
+            <ul><li>Maintain lifestyle</li><li>Exercise regularly</li><li>Monitor BP & sugar</li></ul>
+            ",2025-12-09 22:18
+Ravjot Kaur,Heart,Low Chances of Heart Disease,"
+            <h5><strong>✅ Recommended Actions:</strong></h5>
+            <ul><li>Maintain lifestyle</li><li>Exercise regularly</li><li>Monitor BP & sugar</li></ul>
+            ",2025-12-09 22:21
+Ravjot Kaur,Heart,Low Chances of Heart Disease,"
+            <h5><strong>✅ Recommended Actions:</strong></h5>
+            <ul><li>Maintain lifestyle</li><li>Exercise regularly</li><li>Monitor BP & sugar</li></ul>
+            ",2025-12-09 22:21
+Ravjot Kaur,Heart,Low Chances of Heart Disease,"
+            <h5><strong>✅ Recommended Actions:</strong></h5>
+            <ul><li>Maintain lifestyle</li><li>Exercise regularly</li><li>Monitor BP & sugar</li></ul>
+            ",2025-12-09 22:26
+Ravjot Kaur,Diabetes,Diabetic,"
+            <h5><strong>✅ Recommended Actions:</strong></h5>
+            <ul><li>Low-sugar diet</li><li>Exercise daily</li><li>Monitor sugar levels</li></ul>
+            ",2025-12-09 22:57
+Ravjot Kaur,Diabetes,Diabetic,"
+            <h5><strong>✅ Recommended Actions:</strong></h5>
+            <ul><li>Low-sugar diet</li><li>Exercise daily</li><li>Monitor sugar levels</li></ul>
+            ",2025-12-09 23:09
+Ravjot Kaur,Heart,Low Chances of Heart Disease,"
+            <h5><strong>✅ Recommended Actions:</strong></h5>
+            <ul><li>Maintain lifestyle</li><li>Exercise regularly</li><li>Monitor BP & sugar</li></ul>
+            ",2025-12-10 21:48
+Ravjot Kaur,Heart,Low Chances of Heart Disease,"
+            <h5><strong>✅ Recommended Actions:</strong></h5>
+            <ul><li>Maintain lifestyle</li><li>Exercise regularly</li><li>Monitor BP & sugar</li></ul>
+            ",2025-12-10 21:50
+Ravjot Kaur,Chest,Higher Chances of Pneumonia,"
+                <h5><strong>✅ Recommended Actions:</strong></h5>
+                <ul><li>Consult a doctor</li><li>Rest at home</li><li>Avoid dust and cold drinks</li></ul>
+                ",2025-12-10 21:57
+Ravjot Kaur,Chest,Higher Chances of Pneumonia,"
+                <h5><strong>✅ Recommended Actions:</strong></h5>
+                <ul><li>Consult a doctor</li><li>Rest at home</li><li>Avoid dust and cold drinks</li></ul>
+                ",2025-12-10 21:58
+Ravjot Kaur,Chest,Higher Chances of Pneumonia,"
+                <h5><strong>✅ Recommended Actions:</strong></h5>
+                <ul><li>Consult a doctor</li><li>Rest at home</li><li>Avoid dust and cold drinks</li></ul>
+                ",2025-12-10 22:01
+Ravjot Kaur,Chest,Higher Chances of Pneumonia,"
+                <h5><strong>✅ Recommended Actions:</strong></h5>
+                <ul><li>Consult a doctor</li><li>Rest at home</li><li>Avoid dust and cold drinks</li></ul>
+                ",2025-12-10 22:01
+Ravjot Kaur,Chest,Higher Chances of Pneumonia,"
+                <h5><strong>✅ Recommended Actions:</strong></h5>
+                <ul><li>Consult a doctor</li><li>Rest at home</li><li>Avoid dust and cold drinks</li></ul>
+                ",2025-12-10 22:07
+Ravjot Kaur,Chest,No Pneumonia Detected,"
+                <h5><strong>✅ Healthy Tips:</strong></h5>
+                <ul><li>Practice deep breathing</li><li>Avoid smoking</li><li>Rest well</li></ul>
+                ",2025-12-10 22:08
+Ravjot Kaur,Chest,No Pneumonia Detected,"
+                <h5><strong>✅ Healthy Tips:</strong></h5>
+                <ul><li>Practice deep breathing</li><li>Avoid smoking</li><li>Rest well</li></ul>
+                ",2025-12-10 22:09
+Ravjot Kaur,Diabetes,Diabetic,"
+            <h5><strong>✅ Recommended Actions:</strong></h5>
+            <ul><li>Low-sugar diet</li><li>Exercise daily</li><li>Monitor sugar levels</li></ul>
+            ",2025-12-10 22:16
+Ravjot Kaur,Diabetes,High Risk of Diabetic,"
+            <h5><strong>✅ Recommended Actions:</strong></h5>
+            <ul><li>Maintain a balanced low-sugar diet</li>
+            <li>Exercise regularly (30 mins/day)</li>
+             <li>Monitor your blood sugar levels regularly</li>
+             <li> Take medications as prescribed</li>
+             <li>Get regular checkups</li></ul>
+            ",2025-12-10 23:10
+Ravjot Kaur,Diabetes,High Risk of Diabetic,"
+            <h5><strong>✅ Recommended Actions:</strong></h5>
+            <ul><li>Maintain a balanced low-sugar diet</li>
+            <li>Exercise regularly (30 mins/day)</li>
+             <li>Monitor your blood sugar levels regularly</li>
+             <li> Take medications as prescribed</li>
+             <li>Get regular checkups</li></ul>
+            ",2025-12-12 22:34
+Ravjot Kaur,Diabetes,High Risk of Diabetic,"
+            <h5><strong>✅ Recommended Actions:</strong></h5>
+            <ul><li>Maintain a balanced low-sugar diet</li>
+            <li>Exercise regularly (30 mins/day)</li>
+             <li>Monitor your blood sugar levels regularly</li>
+             <li> Take medications as prescribed</li>
+             <li>Get regular checkups</li></ul>
+            ",2025-12-12 22:35
+Ravjot Kaur,Diabetes,High Risk of Diabetic,"
+            <h5><strong>✅ Recommended Actions:</strong></h5>
+            <ul><li>Maintain a balanced low-sugar diet</li>
+            <li>Exercise regularly (30 mins/day)</li>
+             <li>Monitor your blood sugar levels regularly</li>
+             <li> Take medications as prescribed</li>
+             <li>Get regular checkups</li></ul>
+            ",2025-12-12 22:35
+Ravjot Kaur,Diabetes,High Risk of Diabetic,"
+            <h5><strong>✅ Recommended Actions:</strong></h5>
+            <ul><li>Maintain a balanced low-sugar diet</li>
+            <li>Exercise regularly (30 mins/day)</li>
+             <li>Monitor your blood sugar levels regularly</li>
+             <li> Take medications as prescribed</li>
+             <li>Get regular checkups</li></ul>
+            ",2025-12-12 22:35
+Ravjot Kaur,Diabetes,High Risk of Diabetic,"
+            <h5><strong>✅ Recommended Actions:</strong></h5>
+            <ul><li>Maintain a balanced low-sugar diet</li>
+            <li>Exercise regularly (30 mins/day)</li>
+             <li>Monitor your blood sugar levels regularly</li>
+             <li> Take medications as prescribed</li>
+             <li>Get regular checkups</li></ul>
+            ",2025-12-12 22:37
+Ravjot Kaur,Heart,Low Chances of Heart Disease,"
+            <h5><strong>✅ Recommended Actions:</strong></h5>
+            <ul><li>Keep up the good lifestyle</li>
+            <li>Exercise regularly</li>
+            <li>Monitor BP & sugar levels</li></ul>
+            ",2025-12-12 22:39
+Ravjot Kaur,Chest,Higher Chances of Pneumonia,"
+                <h5><strong>✅ Recommended Actions:</strong></h5>
+                <ul><li>Consult a doctor</li>
+                <li>Rest at home</li>
+                <li>Avoid dust and cold drinks</li></ul>
+                ",2025-12-12 22:39
+Ravjot Kaur,Diabetes,High Risk of Diabetic,"
+            <h5><strong>✅ Recommended Actions:</strong></h5>
+            <ul><li>Maintain a balanced low-sugar diet</li>
+            <li>Exercise regularly (30 mins/day)</li>
+             <li>Monitor your blood sugar levels regularly</li>
+             <li> Take medications as prescribed</li>
+             <li>Get regular checkups</li></ul>
+            ",2025-12-12 23:00
+Ravjot Kaur,Diabetes,High Risk of Diabetic,"
+            <h5><strong>✅ Recommended Actions:</strong></h5>
+            <ul><li>Maintain a balanced low-sugar diet</li>
+            <li>Exercise regularly (30 mins/day)</li>
+             <li>Monitor your blood sugar levels regularly</li>
+             <li> Take medications as prescribed</li>
+             <li>Get regular checkups</li></ul>
+            ",2025-12-12 23:03
+Ravjot Kaur,Diabetes,High Risk of Diabetic,"
+            <h5><strong>✅ Recommended Actions:</strong></h5>
+            <ul><li>Maintain a balanced low-sugar diet</li>
+            <li>Exercise regularly (30 mins/day)</li>
+             <li>Monitor your blood sugar levels regularly</li>
+             <li> Take medications as prescribed</li>
+             <li>Get regular checkups</li></ul>
+            ",2025-12-12 23:30
+HUHI,Heart,Low Chances of Heart Disease,"
+            <h5><strong>✅ Recommended Actions:</strong></h5>
+            <ul><li>Keep up the good lifestyle</li>
+            <li>Exercise regularly</li>
+            <li>Monitor BP & sugar levels</li></ul>
+            ",2026-01-05 18:05
+HUHI,Chest,Higher Chances of Pneumonia,"
+                <h5><strong>✅ Recommended Actions:</strong></h5>
+                <ul><li>Consult a doctor</li>
+                <li>Rest at home</li>
+                <li>Avoid dust and cold drinks</li></ul>
+                ",2026-01-05 18:05
+HUHI,Heart,Low Chances of Heart Disease,"
+            <h5><strong>✅ Recommended Actions:</strong></h5>
+            <ul><li>Keep up the good lifestyle</li>
+            <li>Exercise regularly</li>
+            <li>Monitor BP & sugar levels</li></ul>
+            ",2026-01-05 18:05
+HUHI,Heart,Low Chances of Heart Disease,"
+            <h5><strong>✅ Recommended Actions:</strong></h5>
+            <ul><li>Keep up the good lifestyle</li>
+            <li>Exercise regularly</li>
+            <li>Monitor BP & sugar levels</li></ul>
+            ",2026-01-13 14:24
+HUHI,Diabetes,High Risk of Diabetes,"
+            <h5><strong>✅ Recommended Actions:</strong></h5>
+            <ul><li>Maintain a balanced low-sugar diet</li>
+            <li>Exercise regularly (30 mins/day)</li>
+            <li>Monitor blood sugar regularly</li>
+            <li>Take medications as prescribed</li>
+            <li>Get regular checkups</li></ul>
+            ",2026-01-13 14:24
+HUHI,Chest,Higher Chances of Pneumonia,"
+                <h5><strong>✅ Recommended Actions:</strong></h5>
+                <ul><li>Consult a doctor</li>
+                <li>Rest at home</li>
+                <li>Avoid dust and cold drinks</li></ul>
+                ",2026-01-13 14:24
+HUHI,Heart,Low Chances of Heart Disease,"
+            <h5><strong>✅ Recommended Actions:</strong></h5>
+            <ul><li>Keep up the good lifestyle</li>
+            <li>Exercise regularly</li>
+            <li>Monitor BP & sugar levels</li></ul>
+            ",2026-01-14 10:23
+HUHI,Diabetes,High Risk of Diabetes,"
+            <h5><strong>✅ Recommended Actions:</strong></h5>
+            <ul><li>Maintain a balanced low-sugar diet</li>
+            <li>Exercise regularly (30 mins/day)</li>
+            <li>Monitor blood sugar regularly</li>
+            <li>Take medications as prescribed</li>
+            <li>Get regular checkups</li></ul>
+            ",2026-01-14 10:23
+HUHI,Chest,Higher Chances of Pneumonia,"
+                <h5><strong>✅ Recommended Actions:</strong></h5>
+                <ul><li>Consult a doctor</li>
+                <li>Rest at home</li>
+                <li>Avoid dust and cold drinks</li></ul>
+                ",2026-01-14 10:23

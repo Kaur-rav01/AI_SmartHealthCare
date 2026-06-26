@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% block title %}Chest X-Ray{% endblock %}
+{% block content %}
+
+<style>
+.card {
+    background-color: #0e1117;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #979595ff;
+}
+
+/* Blue Analyze Button */
+.analyze-btn {
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+.analyze-btn:hover {
+    background-color: #0b5ed7;
+}
+
+/* Preview Image Box */
+.preview-box {
+    background-color: #2b2f36;
+    padding: 15px;
+    border-radius: 10px;
+    display: inline-block;
+    border: 1px solid #555;
+}
+
+/* Result Box */
+.result-box {
+    background-color: #d4f8d4;
+    border-left: 6px solid #2b8838;
+    padding: 15px;
+    font-weight: 600;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+/* Tips Box */
+.tips-box {
+    background-color: #d1f5d1;
+    border-left: 6px solid #2fa14a;
+    padding: 15px;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #1f7433ff
+}
+</style>
+
+<h3 class="fw-bold text-center mb-4">
+    🩺 Chest X-Ray Disease Detection
+</h3>
+
+<div class="card p-4">
+
+    <div class="row g-4">
+
+        <!-- Upload Section -->
+        <div class="col-md-6">
+            <h5>Upload a Chest X-ray Image</h5>
+
+            <form method="POST" enctype="multipart/form-data">
+                <label class="mt-2">Choose an image</label>
+                <input type="file" name="image" class="form-control mb-2"
+                       accept="image/*" required>
+
+                <small class="text-muted">JPG, JPEG, PNG | Max 200MB</small>
+
+                <button class="analyze-btn mt-3">Analyze</button>
+            </form>
+        </div>
+
+        <!-- Preview Section -->
+        <div class="col-md-6 text-center">
+            <h5>Preview</h5>
+
+            {% if image_path %}
+            <div class="preview-box mt-2">
+                <img src="{{ image_path }}" class="img-fluid" style="max-width:250px;">
+            </div>
+            {% else %}
+            <div class="preview-box mt-2" style="width:250px; height:250px;">
+                <p class="text-muted mt-5">No image</p>
+            </div>
+            {% endif %}
+        </div>
+
+    </div>
+
+    <!-- RESULT -->
+    {% if prediction %}
+    <div class="result-box mt-4">
+        {{ prediction }}
+    </div>
+
+    <!-- TIPS BOX -->
+    <div class="tips-box mt-3">
+        {{ recommendation|safe }}
+    </div>
+    {% endif %}
+
+</div>
+
+{% endblock %}

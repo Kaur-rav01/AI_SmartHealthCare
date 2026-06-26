@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+.main-card {
+    max-width: 800px;         /* Set card width */
+    margin: 30px auto;        /* Center card */
+}
+
+.card {
+    background-color: #0e1117;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #979595ff;
+}
+
+label {
+    color: #fff;
+    font-weight: 500;
+}
+
+.input-box {
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+.input-box::placeholder {
+    color: #bbb !important;
+    opacity: 1 !important;
+}
+
+.result-box {
+    background-color: #d9ffd9;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 6px solid green;
+    font-weight: bold;
+    font-size: 18px;
+    color: green;
+}
+
+.action-box {
+    padding: 20px;
+    border-radius: 8px;
+}
+
+</style>
+
+<div class="main-card">
+
+    <h2 class="text-center fw-bold mb-3">❤️ Heart Disease Prediction</h2>
+    <p class="text-center text-light">
+        Answer the following questions to predict the risk of heart disease
+    </p>
+
+    <div class="card mt-4">
+        <form method="POST">
+
+            <label>Age</label>
+            <input type="range" name="age" min="20" max="100" class="form-range"
+                   oninput="ageValue.innerText=this.value">
+            <p class="text-success">Age: <span id="ageValue">50</span></p>
+
+            <div class="row g-3">
+
+                <div class="col-md-6">
+                    <label>Gender</label>
+                    <select name="sex" class="form-control input-box">
+                        <option value="1">Male</option>
+                        <option value="0">Female</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label>Max Heart Rate</label>
+                    <input type="number" name="thalach" class="form-control input-box" placeholder="200" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label>Chest Pain Type</label>
+                    <select name="cp" class="form-control input-box">
+                        <option value="0">Typical Angina</option>
+                        <option value="1">Atypical Angina</option>
+                        <option value="2">Non-anginal Pain</option>
+                        <option value="3">Asymptomatic</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label>Exercise Induced Angina</label>
+                    <select name="exang" class="form-control input-box">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label>Resting BP</label>
+                    <input type="number" name="trestbps" class="form-control input-box" placeholder="120" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label>ST Depression</label>
+                    <input type="number" name="oldpeak" class="form-control input-box" placeholder="1.0" required >
+                </div>
+
+                <div class="col-md-6">
+                    <label>Cholesterol</label>
+                    <input type="number" name="chol" class="form-control input-box" placeholder="200" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label>ST Slope</label>
+                    <select name="slope" class="form-control input-box">
+                        <option value="0">Upsloping</option>
+                        <option value="1">Flat</option>
+                        <option value="2">Downsloping</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label>Fasting Blood Sugar >120</label>
+                    <select name="fbs" class="form-control input-box">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label>Major Vessels</label>
+                    <select name="ca" class="form-control input-box">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label>Resting ECG</label>
+                    <select name="restecg" class="form-control input-box">
+                        <option value="0">Normal</option>
+                        <option value="1">ST-T Abnormality</option>
+                        <option value="2">LV Hypertrophy</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label>Thalassemia</label>
+                    <select name="thal" class="form-control input-box">
+                        <option value="1">Normal</option>
+                        <option value="2">Fixed Defect</option>
+                        <option value="3">Reversible Defect</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <button class="predict-btn w-100 mt-3">Predict Heart Disease</button>
+
+        </form>
+
+        {% if prediction %}
+            <div class="result-box mt-4">
+                {{ prediction }}
+            </div>
+
+            {% if "Low" in prediction %}
+                <div class="action-box mt-3" style="background:#d9ffd9; border-left:6px solid green; color:green;">
+                    {{ recommendation|safe }}
+                </div>
+            {% else %}
+                <div class="action-box mt-3" style="background:#ffe5e5; border-left:6px solid red; color:red;">
+                    {{ recommendation|safe }}
+                </div>
+            {% endif %}
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock %}

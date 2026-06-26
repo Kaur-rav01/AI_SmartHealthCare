@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<style>
+.hero-section {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.hero-img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.overlay-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    background: rgba(0, 0, 0, 0.55);
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.overlay-box input {
+    background: #222;
+    color: white;
+}
+
+.overlay-box input::placeholder {
+    color: #bbb;
+}
+
+.btn-start {
+    background: #0a8f3c;
+    color: white;
+    font-weight: bold;
+}
+
+.btn-start:hover {
+    background: #06692c;
+}
+
+.options-container {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.option-card {
+    border: 1px solid #555;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    width: 280px;
+    opacity: 0.5;  
+    pointer-events: none;  
+    transition: all 0.3s;
+}
+
+.option-card.enabled {
+    opacity: 1;
+    pointer-events: auto;  
+}
+
+.option-card h4 {
+    margin-bottom: 10px;
+}
+
+.predict-btn {
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.red-btn { background:#c1121f; }
+.yellow-btn { background:#f0ad00; }
+.blue-btn { background:#007BFF; }
+
+.predict-btn:hover {
+    opacity: 0.8;
+}
+
+.logout-btn {
+    background: #555;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background: #333;
+}
+</style>
+
+<h2 class="text-center text-light mt-4">Multi Disease Detection System</h2>
+
+<div class="hero-section mt-4">
+    <img src="{{ url_for('static', filename='images/dr.jpg') }}" class="hero-img">
+
+    <div class="overlay-box text-center">
+
+        <!-- Flash Messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        {% if 'patient_name' in session %}
+            <p class="text-light mb-2">Welcome, <strong>{{ session['patient_name'] }}</strong>!</p>
+            <form action="{{ url_for('logout') }}" method="get">
+                <button class="logout-btn w-50" type="submit">Logout</button>
+            </form>
+        {% else %}
+            {% if error %}
+                <div class="alert alert-danger">{{ error }}</div>
+            {% endif %}
+
+            <form method="POST" id="patient-form">
+                <input type="text" class="form-control mb-2" name="name" placeholder="Enter your name" required>
+                <input type="number" class="form-control mb-2" name="age" placeholder="Enter age" required>
+                <button class="btn btn-start w-100" type="submit">Submit</button>
+            </form>
+        {% endif %}
+    </div>
+</div>
+
+<div class="options-container">
+    <div class="option-card" id="heart-card">
+        <h4>Heart Disease</h4>
+        <a href="/heart">
+            <button class="predict-btn red-btn">Predict</button>
+        </a>
+    </div>
+
+    <div class="option-card" id="diabetes-card">
+        <h4>Diabetes</h4>
+        <a href="/diabetes">
+            <button class="predict-btn yellow-btn">Predict</button>
+        </a>
+    </div>
+
+    <div class="option-card" id="xray-card">
+        <h4>Chest X-Ray</h4>
+        <a href="/chest">
+            <button class="predict-btn blue-btn">Predict</button>
+        </a>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const isLoggedIn = {{ 'true' if 'patient_name' in session else 'false' }};
+    const optionCards = ["heart-card", "diabetes-card", "xray-card"];
+
+    if (isLoggedIn) {
+        // Enable all option cards
+        optionCards.forEach(id => {
+            document.getElementById(id).classList.add("enabled");
+        });
+    }
+
+    // Optional: enable cards dynamically after form submit without page reload
+    const form = document.getElementById("patient-form");
+    if(form){
+        form.addEventListener("submit", () => {
+            optionCards.forEach(id => {
+                document.getElementById(id).classList.add("enabled");
+            });
+        });
+    }
+});
+</script>
+
+{% endblock %}

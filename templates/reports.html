@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %}Reports{% endblock %}
+{% block content %}
+
+<style>
+.table-custom {
+    width: 800px; /* Fixed width */
+    margin: 0 auto; /* Center the table */
+    border-collapse: collapse;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    border: 2px solid #fff; /* Outer white border */
+}
+
+.table-custom th {
+    background-color: #111; /* Darker header background */
+}
+
+.table-custom tr:hover {
+    background-color: #333; /* Hover effect */
+}
+</style>
+
+<div class="card p-3">
+  <h3 class="text-center">My Reports</h3>
+  <br>
+  {% if reports %}
+    <table class="table-custom">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Prediction</th>
+          <th>Recommendation</th>
+          <th>Date & Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for r in reports %}
+        <tr>
+          <td>{{ r.report_type }}</td>
+          <td>{{ r.prediction|safe }}</td>
+          <td>{{ r.recommendation|safe }}</td>
+          <td>{{ r.datetime }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p class="text-muted text-center">No reports yet.</p>
+  {% endif %}
+</div>
+
+{% endblock %}
